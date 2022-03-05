@@ -7,8 +7,8 @@ function App() {
       <ToggleSwitch
         question="Which are the best sports people & teams?"
         options={[
-          ["Liverpool", "Chelsea", "Man Utd"],
-          ["Serena Williams", "Naomi Osaka"],
+          ["Liverpool - correct", "Chelsea", "Man Utd"],
+          ["Serena Williams - correct", "Naomi Osaka"],
         ]}
       />
     </div>
