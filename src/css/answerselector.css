@@ -1,0 +1,54 @@
+.answer-selector {
+  border: 2px solid #f9d29f;
+  box-sizing: border-box;
+  border-radius: 100px;
+  width: 900px;
+  height: 80px;
+  padding: 0;
+}
+fieldset {
+  border: 0;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.input {
+  display: inline-block;
+  vertical-align: middle;
+  /* width: 200px; */
+  /* margin: 0 20px; */
+}
+
+input[type="radio"] + label span {
+  width: 450px;
+  height: 80px;
+  left: 0px;
+  top: 0px;
+  /* display: inline-block; */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+input[type="radio"]:checked + label span {
+  width: 450px;
+  height: 80px;
+  left: 0px;
+  top: 0px;
+  /* display: inline-block; */
+  display: flex;
+  text-align: center;
+  margin: 0;
+
+  background: #f8caa3;
+  border-radius: 100px;
+}
+input {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+label {
+  margin: 0;
+  padding: 0;
+}

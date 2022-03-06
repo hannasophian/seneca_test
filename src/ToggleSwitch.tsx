@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import AnswerSelector from "./AnswerSelector";
 import CorrectMessage from "./utils/CorrectMessage";
-import isCorrectMessage from "./utils/CorrectMessage";
-
+import "./css/toggleswitch.css";
 // When using this component, ensure that the correct answer is the first element in its array
 interface Props {
   question: string;
