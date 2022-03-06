@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import shuffleArray from "./utils/shuffleArray";
 import updateIsCorrect from "./utils/updateIsCorrect";
+import "./css/answerselector.css";
 
 interface Props {
   options: [string, string] | [string, string, string];
@@ -34,16 +35,18 @@ export default function AnswerSelector({
   }, [shuffledOptions, selected]);
 
   const answerSelectors = shuffledOptions.map((answer, idx) => (
-    <div key={idx}>
+    <div className="input" key={idx}>
       <input
         name={`${answer[0]}`}
         id={`${answer}`}
         type="radio"
         checked={idx === selected}
-        onClick={() => handleClick(idx)}
+        // onClick={() => handleClick(idx)}
         onChange={() => {}}
       />
-      <label htmlFor={`${answer}`}>{answer}</label>
+      <label htmlFor={`${answer}`} onClick={() => handleClick(idx)}>
+        <span>{answer}</span>
+      </label>
     </div>
   ));
 
@@ -54,7 +57,6 @@ export default function AnswerSelector({
   return (
     <div className="answer-selector">
       <fieldset disabled={isCorrect.every(Boolean)}>{answerSelectors}</fieldset>
-      <span className="switch" />
     </div>
   );
 }

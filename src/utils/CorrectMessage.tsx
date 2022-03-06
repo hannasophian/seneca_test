@@ -5,5 +5,9 @@ interface Props {
 export default function CorrectMessage({ isCorrect }: Props) {
   const correctMessage = "The answer is correct";
   const incorrectMessage = "The answer is incorrect";
-  return <p>{isCorrect.every(Boolean) ? correctMessage : incorrectMessage}</p>;
+  return (
+    <p id="correct-message">
+      {isCorrect.every(Boolean) ? correctMessage : incorrectMessage}
+    </p>
+  );
 }

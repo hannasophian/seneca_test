@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import AnswerSelector from "./AnswerSelector";
 import CorrectMessage from "./utils/CorrectMessage";
-import isCorrectMessage from "./utils/CorrectMessage";
-
+import "./css/toggleswitch.css";
 // When using this component, ensure that the correct answer is the first element in its array
 interface Props {
   question: string;
@@ -25,7 +24,7 @@ export default function ToggleSwitch({
   }, [isCorrect]);
   return (
     <div className="toggle-switch">
-      <h3>{question}</h3>
+      <h3 id="question">{question}</h3>
       <form>
         {options.map((optionSet, idx) => (
           <div key={idx}>

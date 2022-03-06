@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+.toggle-switch {
+  background: linear-gradient(180deg, #f6b868 0%, #ee6b2d 100%);
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#question {
+  font-family: "Mulish", sans-serif;
+  font-size: 40px;
+  color: white;
+}
+
+#correct-message {
+  font-family: "Mulish", sans-serif;
+  font-size: 32px;
+  color: white;
+}
