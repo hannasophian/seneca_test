@@ -1,48 +1,29 @@
 import { useEffect, useState } from "react";
-import shuffleArray from "../utils/shuffleArray";
-import updateIsCorrect from "../utils/updateIsCorrect";
 import "../css/answerselector.css";
+import newSelectedIdxArr from "../utils/newSelectedIdxArr";
 
 interface Props {
-  // options: [string, string] | [string, string, string];
-  options: string[];
-  answerNum: number;
-  setIsCorrect: React.Dispatch<React.SetStateAction<boolean[]>>;
-  isCorrect: boolean[];
+  answers: string[];
+  answerSetNum: number;
+  isCorrectArr: boolean[];
+  setSelectedIdxArr: React.Dispatch<React.SetStateAction<number[]>>;
+  selectedIdxArr: number[];
 }
 
 export default function AnswerSelector({
-  options,
-  answerNum,
-  setIsCorrect,
-  isCorrect,
+  answers,
+  answerSetNum,
+  isCorrectArr,
+  setSelectedIdxArr,
+  selectedIdxArr,
 }: Props): JSX.Element {
-  // const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
-  const [selected, setSelected] = useState<number>(0);
-
-  // Shuffles options once and assigns to useState
-  // useEffect(() => {
-  //   setShuffledOptions(shuffleArray(options));
-  // }, []);
-
-  useEffect(() => {
-    updateIsCorrect(
-      setIsCorrect,
-      isCorrect,
-      options[0],
-      options[selected],
-      answerNum
-    );
-  }, [selected]);
-
-  const answerSelectors = options.map((answer, idx) => (
+  const answerSelectors = answers.map((answer, idx) => (
     <div className="input" key={idx}>
       <input
         name={`${answer[0]}`}
         id={`${answer}`}
         type="radio"
-        checked={idx === selected}
-        // onClick={() => handleClick(idx)}
+        checked={idx === selectedIdxArr[answerSetNum]}
         onChange={() => {}}
       />
       <label htmlFor={`${answer}`} onClick={() => handleClick(idx)}>
@@ -51,13 +32,17 @@ export default function AnswerSelector({
     </div>
   ));
 
-  function handleClick(selectedIdx: number) {
-    setSelected(selectedIdx);
+  function handleClick(newSelectedIdx: number) {
+    setSelectedIdxArr(
+      newSelectedIdxArr(selectedIdxArr, answerSetNum, newSelectedIdx)
+    );
   }
 
   return (
     <div className="answer-selector">
-      <fieldset disabled={isCorrect.every(Boolean)}>{answerSelectors}</fieldset>
+      <fieldset disabled={isCorrectArr.every(Boolean)}>
+        {answerSelectors}
+      </fieldset>
     </div>
   );
 }

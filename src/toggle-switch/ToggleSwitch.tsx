@@ -3,6 +3,7 @@ import AnswerSelector from "./AnswerSelector";
 import CorrectMessage from "../utils/CorrectMessage";
 import "../css/toggleswitch.css";
 import shuffleArray from "../utils/shuffleArray";
+import newIsCorrect from "../utils/newIsCorrect";
 // When using this component, ensure that the correct answer is the first element in its array
 interface Props {
   question: string;
@@ -13,37 +14,46 @@ export default function ToggleSwitch({
   question,
   options,
 }: Props): JSX.Element {
-  const [isCorrect, setIsCorrect] = useState<boolean[]>(
+  const [isCorrectArr, setIsCorrectArr] = useState<boolean[]>(
     [...Array(options.length)].map(() => false)
   );
-  const [shuffledOptions, setShuffledOptions] = useState<string[][]>([]);
+  const [shuffledAnswers, setShuffledAnswers] = useState<string[][]>(
+    [...options].map((optionArr) => shuffleArray(optionArr))
+  );
+
+  const [selectedIdxArr, setSelectedIdxArr] = useState<number[]>(
+    [...Array(options.length)].map(() => 0)
+  );
 
   useEffect(() => {
-    setShuffledOptions(
-      [...options].map((optionArr) => shuffleArray(optionArr))
+    console.log(selectedIdxArr);
+    setIsCorrectArr(
+      newIsCorrect(isCorrectArr, shuffledAnswers, selectedIdxArr, options)
     );
-  }, []);
+  }, [selectedIdxArr]);
 
   useEffect(() => {
-    console.log(isCorrect);
-  }, [isCorrect]);
+    console.log(isCorrectArr);
+  }, [isCorrectArr]);
+
   return (
     <div className="toggle-switch">
       <h3 id="question">{question}</h3>
       <form>
-        {shuffledOptions.map((optionSet, idx) => (
+        {shuffledAnswers.map((answerSet, idx) => (
           <div key={idx}>
             <AnswerSelector
-              options={optionSet}
-              answerNum={idx}
-              setIsCorrect={setIsCorrect}
-              isCorrect={isCorrect}
+              answers={answerSet}
+              answerSetNum={idx}
+              isCorrectArr={isCorrectArr}
+              setSelectedIdxArr={setSelectedIdxArr}
+              selectedIdxArr={selectedIdxArr}
             />
             <br />
           </div>
         ))}
       </form>
-      <CorrectMessage isCorrect={isCorrect} />
+      <CorrectMessage isCorrectArr={isCorrectArr} />
     </div>
   );
 }

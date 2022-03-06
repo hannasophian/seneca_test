@@ -1,13 +1,13 @@
 interface Props {
-  isCorrect: boolean[];
+  isCorrectArr: boolean[];
 }
 
-export default function CorrectMessage({ isCorrect }: Props) {
+export default function CorrectMessage({ isCorrectArr }: Props) {
   const correctMessage = "The answer is correct";
   const incorrectMessage = "The answer is incorrect";
   return (
     <p id="correct-message">
-      {isCorrect.every(Boolean) ? correctMessage : incorrectMessage}
+      {isCorrectArr.every(Boolean) ? correctMessage : incorrectMessage}
     </p>
   );
 }
