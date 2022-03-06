@@ -24,7 +24,7 @@ export default function ToggleSwitch({
   }, [isCorrect]);
   return (
     <div className="toggle-switch">
-      <h3>{question}</h3>
+      <h3 id="question">{question}</h3>
       <form>
         {options.map((optionSet, idx) => (
           <div key={idx}>
