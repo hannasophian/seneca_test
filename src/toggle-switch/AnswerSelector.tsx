@@ -39,7 +39,7 @@ export default function AnswerSelector({
   }
 
   return (
-    <div className="answer-selector">
+    <div className={`answer-selector-${answers.length}`}>
       <fieldset disabled={isCorrectArr.every(Boolean)}>
         {answerSelectors}
       </fieldset>

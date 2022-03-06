@@ -1,13 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
 
-.answer-selector {
+.answer-selector-2 {
   border: 2px solid #f9d29f;
   box-sizing: border-box;
   border-radius: 100px;
-  width: 900;
+  width: 900px;
   height: 80px;
   padding: 0;
+  margin: 0 auto;
 }
+
+.answer-selector-3 {
+  border: 2px solid #f9d29f;
+  box-sizing: border-box;
+  border-radius: 100px;
+  width: 1350px;
+  height: 80px;
+  padding: 0;
+  margin: 0 auto;
+}
+
 fieldset {
   border: 0;
   display: flex;
