@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import AnswerSelector from "./AnswerSelector";
-import CorrectMessage from "./utils/CorrectMessage";
-import "./css/toggleswitch.css";
+import CorrectMessage from "../utils/CorrectMessage";
+import "../css/toggleswitch.css";
+import shuffleArray from "../utils/shuffleArray";
 // When using this component, ensure that the correct answer is the first element in its array
 interface Props {
   question: string;
@@ -15,9 +16,13 @@ export default function ToggleSwitch({
   const [isCorrect, setIsCorrect] = useState<boolean[]>(
     [...Array(options.length)].map(() => false)
   );
-  // const [selectedIdx, setSelectedIdx] = useState<number[]>(
-  // [...Array(options.length)].map(() => 0)
-  // );
+  const [shuffledOptions, setShuffledOptions] = useState<string[][]>([]);
+
+  useEffect(() => {
+    setShuffledOptions(
+      [...options].map((optionArr) => shuffleArray(optionArr))
+    );
+  }, []);
 
   useEffect(() => {
     console.log(isCorrect);
@@ -26,7 +31,7 @@ export default function ToggleSwitch({
     <div className="toggle-switch">
       <h3 id="question">{question}</h3>
       <form>
-        {options.map((optionSet, idx) => (
+        {shuffledOptions.map((optionSet, idx) => (
           <div key={idx}>
             <AnswerSelector
               options={optionSet}

@@ -1,4 +1,4 @@
-import ToggleSwitch from "./ToggleSwitch";
+import ToggleSwitch from "./toggle-switch/ToggleSwitch";
 
 function App() {
   return (
