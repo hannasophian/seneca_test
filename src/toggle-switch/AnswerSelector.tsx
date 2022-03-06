@@ -26,7 +26,12 @@ export default function AnswerSelector({
         checked={idx === selectedIdxArr[answerSetNum]}
         onChange={() => {}}
       />
-      <label htmlFor={`${answer}`} onClick={() => handleClick(idx)}>
+      <label
+        htmlFor={`${answer}`}
+        onClick={() => {
+          if (!isCorrectArr.every(Boolean)) handleClick(idx);
+        }}
+      >
         <span>{answer}</span>
       </label>
     </div>
@@ -40,9 +45,7 @@ export default function AnswerSelector({
 
   return (
     <div className={`answer-selector-${answers.length}`}>
-      <fieldset disabled={isCorrectArr.every(Boolean)}>
-        {answerSelectors}
-      </fieldset>
+      <fieldset>{answerSelectors}</fieldset>
     </div>
   );
 }
