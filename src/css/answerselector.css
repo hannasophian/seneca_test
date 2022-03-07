@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
 
 .answer-selector-2 {
-  border: 2px solid #f9d29f;
+  border: 2px solid rgba(255, 253, 253, 0.5);
   box-sizing: border-box;
   border-radius: 100px;
   width: 900px;
@@ -11,7 +11,7 @@
 }
 
 .answer-selector-3 {
-  border: 2px solid #f9d29f;
+  border: 2px solid rgba(255, 253, 253, 0.5);
   box-sizing: border-box;
   border-radius: 100px;
   width: 1350px;
@@ -59,8 +59,9 @@ input[type="radio"]:checked + label span {
   display: flex;
   text-align: center;
   margin: 0;
+  padding: 0;
 
-  background: #f8caa3;
+  background: rgba(255, 253, 253, 0.5);
   border-radius: 100px;
   color: #4e4743;
 }
