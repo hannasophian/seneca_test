@@ -66,12 +66,12 @@ label {
 }
 
 /* If width is larger than 500, the layout of answers is horizontal */
-@media only screen and (min-width: 500) {
+@media only screen and (min-width: 500px) {
   .answer-selector-2,
   .answer-selector-3 {
     border-radius: 100px;
-    height: 678px;
-    border: 1px solid rgba(165, 11, 11, 1);
+    height: 80px;
+    border: 1px solid rgba(255, 253, 253, 0.5);
   }
   .answer-selector-2 {
     width: 60vw;
@@ -82,7 +82,7 @@ label {
   input[type="radio"] + label span {
     width: 30vw;
     height: 80px;
-    font-size: 10px;
+    font-size: 18px;
   }
   .input {
     display: inline-block;
