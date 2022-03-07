@@ -3,27 +3,20 @@
 .toggle-switch {
   /* background: linear-gradient(180deg, #f6b868 0%, #ee6b2d 100%); */
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  /* padding-top: 30px;
+  padding-bottom: 30px; */
   width: 100%;
-  max-width: 100%;
 }
-
-/* * {
-  border: 1px solid red;
-} */
 
 #question {
   font-family: "Mulish", sans-serif;
-  font-size: 20px;
+  font-size: 40px;
   color: white;
-  width: 80%;
-  margin: 20px;
 }
 
 #correct-message {
   font-family: "Mulish", sans-serif;
-  font-size: 20px;
+  font-size: 32px;
   color: white;
 }
 

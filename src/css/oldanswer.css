@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+/* If the width of the screen is larger than 1350px */
+@media only screen and (min-width: 1350px) {
+  .answer-selector-2,
+  .answer-selector-3 {
+    border-radius: 100px;
+    height: 80px;
+    border: 1px solid rgba(255, 253, 253, 0.5);
+  }
+  .answer-selector-2 {
+    width: 900px;
+  }
+  .answer-selector-3 {
+    width: 1350px;
+  }
+}
+
+.answer-selector-3,
+.answer-selector-2 {
+  margin: 0 auto;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 253, 253, 0.5);
+  border-radius: 100px;
+  height: 80px;
+  padding: 0;
+}
+.answer-selector-2 {
+  width: 900px;
+}
+
+.answer-selector-3 {
+  width: 1350px;
+}
+
+fieldset {
+  border: 0;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.input {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  /* width: 200px; */
+  /* margin: 0 20px; */
+}
+
+input[type="radio"] + label span {
+  width: 450px;
+  height: 80px;
+  left: 0px;
+  top: 0px;
+  /* display: inline-block; */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  line-height: 0;
+  font-family: "Mulish", sans-serif;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+input[type="radio"]:checked + label span {
+  /* width: 450px;
+  height: 80px;
+  left: 0px;
+  top: 0px; */
+  display: flex;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+  background: rgba(255, 253, 253, 0.5);
+  border-radius: 100px;
+  color: #4e4743;
+}
+input {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+label {
+  margin: 0;
+  padding: 0;
+}
