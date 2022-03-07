@@ -45,6 +45,7 @@ export default function AnswerSelector({
 
   return (
     <div className={`answer-selector-${answers.length}`}>
+      {/* <div className="switch" /> */}
       <fieldset>{answerSelectors}</fieldset>
     </div>
   );

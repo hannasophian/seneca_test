@@ -45,6 +45,17 @@ input[type="radio"] + label span {
 
   font-size: 18px;
 }
+
+/* .switch {
+  height: 48px;
+  width: 100%;
+  background-color: red;
+  position: relative;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+} */
+
 input[type="radio"]:checked + label span {
   margin: 0;
   padding: 0;
