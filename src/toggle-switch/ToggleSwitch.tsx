@@ -4,6 +4,7 @@ import CorrectMessage from "../utils/CorrectMessage";
 import "../css/toggleswitch.css";
 import shuffleArray from "../utils/shuffleArray";
 import newIsCorrect from "../utils/newIsCorrect";
+import getColours from "../utils/getColours";
 // When using this component, ensure that the correct answer is the first element in its array
 interface Props {
   question: string;
@@ -25,6 +26,11 @@ export default function ToggleSwitch({
     [...Array(options.length)].map(() => 0)
   );
 
+  const [backgroundColour, setBackgroundColour] = useState<string[]>([
+    "246, 184, 104",
+    "238, 107, 45",
+  ]);
+
   useEffect(() => {
     console.log(selectedIdxArr);
     setIsCorrectArr(
@@ -34,10 +40,21 @@ export default function ToggleSwitch({
 
   useEffect(() => {
     console.log(isCorrectArr);
+    setBackgroundColour(
+      getColours(
+        isCorrectArr.filter((el) => el === true).length,
+        options.length
+      )
+    );
   }, [isCorrectArr]);
 
   return (
-    <div className="toggle-switch">
+    <div
+      className="toggle-switch"
+      style={{
+        background: `linear-gradient(180deg, rgb(${backgroundColour[0]}) 0%, rgb(${backgroundColour[1]}) 100%)`,
+      }}
+    >
       <h3 id="question">{question}</h3>
       <form>
         {shuffledAnswers.map((answerSet, idx) => (
