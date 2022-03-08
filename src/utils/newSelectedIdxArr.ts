@@ -1,3 +1,5 @@
+
+// Returns an array to change selectedIdxArr
 export default function newSelectedIdxArr(
   selectedIdxArr: number[],
   answerSetNum: number,

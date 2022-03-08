@@ -4,7 +4,6 @@ import "./css/app.css";
 function App() {
   return (
     <div className="App">
-      {/* <h1>this is an app</h1> */}
       <ToggleSwitch
         question="Which are the best sports people & teams?"
         options={[

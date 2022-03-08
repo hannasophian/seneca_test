@@ -1,3 +1,4 @@
+// Shuffles components in an array
 export default function shuffleArray(array: string[]): string[] {
   let newArray = array
     .map((value) => ({ value, sort: Math.random() }))

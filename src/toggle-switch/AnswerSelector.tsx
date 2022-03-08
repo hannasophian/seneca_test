@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "../css/answerselector.css";
 import newSelectedIdxArr from "../utils/newSelectedIdxArr";
 

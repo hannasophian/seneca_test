@@ -1,3 +1,4 @@
+// Returns an array (used to update isCorrect) when a change is made in selected answer
 export default function newIsCorrect(
   isCorrect: boolean[],
   shuffledAnswers: string[][],

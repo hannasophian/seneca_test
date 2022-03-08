@@ -2,7 +2,8 @@ interface Props {
   isCorrectArr: boolean[];
 }
 
-export default function CorrectMessage({ isCorrectArr }: Props) {
+// Returns a message saying whether the answers are correct
+export default function CorrectMessage({ isCorrectArr }: Props): JSX.Element {
   const correctMessage = "The answer is correct";
   const incorrectMessage = "The answer is incorrect";
   return (
