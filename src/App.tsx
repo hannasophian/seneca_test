@@ -6,14 +6,14 @@ function App() {
     <div className="App">
       <ToggleSwitch
         question="Which are the best sports people & teams?"
-        options={[
+        answers={[
           ["Liverpool - correct", "Chelsea", "Man Utd"],
           ["Serena Williams - correct", "Naomi Osaka"],
         ]}
       />
       <ToggleSwitch
         question="An animal cell contains..."
-        options={[
+        answers={[
           ["Ribosomes -", "Cell wall"],
           ["Partially permeable mebrane", "Impermeable membrane"],
           ["Mitochondria", "Cellulose"],
