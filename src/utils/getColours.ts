@@ -1,3 +1,8 @@
+
+// Returns colour for the background of the component 
+// Orange when all wrong
+// Blue when all right
+// Colours in between when some are right
 export default function getColours(
   numCorrect: number,
   numAnswerSets: number

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "../css/answerselector.css";
 import newSelectedIdxArr from "../utils/newSelectedIdxArr";
 
@@ -45,6 +44,7 @@ export default function AnswerSelector({
 
   return (
     <div className={`answer-selector-${answers.length}`}>
+      {/* <div className="switch" /> */}
       <fieldset>{answerSelectors}</fieldset>
     </div>
   );

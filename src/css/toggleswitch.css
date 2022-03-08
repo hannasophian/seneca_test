@@ -5,16 +5,46 @@
   text-align: center;
   padding-top: 30px;
   padding-bottom: 30px;
+  width: 100%;
+  max-width: 100%;
 }
+
+/* * {
+  border: 1px solid red;
+} */
 
 #question {
   font-family: "Mulish", sans-serif;
-  font-size: 40px;
+  font-size: 20px;
   color: white;
+  width: 80%;
+  margin: 20px;
 }
 
 #correct-message {
   font-family: "Mulish", sans-serif;
-  font-size: 32px;
+  font-size: 20px;
   color: white;
+}
+
+form {
+  width: 100%;
+}
+
+@media only screen and (min-width: 500px) {
+  #question {
+    font-size: 20px;
+  }
+  #correct-message {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1350px) {
+  #question {
+    font-size: 28px;
+  }
+  #correct-message {
+    font-size: 28px;
+  }
 }
