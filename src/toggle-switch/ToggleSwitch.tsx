@@ -8,22 +8,22 @@ import getColours from "../utils/getColours";
 // When using this component, ensure that the correct answer is the first element in its array
 interface Props {
   question: string;
-  options: ([string, string] | [string, string, string])[];
+  answers: ([string, string] | [string, string, string])[];
 }
 
 export default function ToggleSwitch({
   question,
-  options,
+  answers,
 }: Props): JSX.Element {
   const [isCorrectArr, setIsCorrectArr] = useState<boolean[]>(
-    [...Array(options.length)].map(() => false)
+    [...Array(answers.length)].map(() => false)
   );
   const [shuffledAnswers, setShuffledAnswers] = useState<string[][]>(
-    [...options].map((optionArr) => shuffleArray(optionArr))
+    [...answers].map((optionArr) => shuffleArray(optionArr))
   );
 
   const [selectedIdxArr, setSelectedIdxArr] = useState<number[]>(
-    [...Array(options.length)].map(() => 0)
+    [...Array(answers.length)].map(() => 0)
   );
 
   const [backgroundColour, setBackgroundColour] = useState<string[]>([
@@ -34,7 +34,7 @@ export default function ToggleSwitch({
   useEffect(() => {
     console.log(selectedIdxArr);
     setIsCorrectArr(
-      newIsCorrect(isCorrectArr, shuffledAnswers, selectedIdxArr, options)
+      newIsCorrect(isCorrectArr, shuffledAnswers, selectedIdxArr, answers)
     );
   }, [selectedIdxArr]);
 
@@ -43,7 +43,7 @@ export default function ToggleSwitch({
     setBackgroundColour(
       getColours(
         isCorrectArr.filter((el) => el === true).length,
-        options.length
+        answers.length
       )
     );
   }, [isCorrectArr]);

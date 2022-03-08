@@ -18,12 +18,12 @@
   font-size: 20px;
   color: white;
   width: 80%;
-  margin: 20px;
+  margin: 20px auto;
 }
 
 #correct-message {
   font-family: "Mulish", sans-serif;
-  font-size: 20px;
+  font-size: 20px auto;
   color: white;
 }
 
