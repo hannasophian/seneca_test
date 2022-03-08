@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# Toggle Switch Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This component can be used for questions with single or multiple answers. Each answer box can have two or three toggle positions.
 
-## Available Scripts
+## Run demo locally
 
 In the project directory, you can run:
 
@@ -11,36 +11,29 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## About the ToggleSwitch Component
+The component takes a question (string) and answers (string[][]). 
+e.g. for question "Which are the best sports people & teams?", answers are 
+          [["Liverpool - correct", "Chelsea", "Man Utd"],
+          ["Serena Williams - correct", "Naomi Osaka"]]
+Ensure that the correct answera are the first elements in the innermost arrays. 
 
-### `yarn test`
+### Responsive
+- The component is responsive down to 320px. 
+- If a screen is below 500px wide, the answers are listed vertically. 
+- Above 500px, the answers are listed horizontally.
+- Above 1350px, the width of the component remains constant.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### User design
+- The background of the component is orange when all answers are wrong and blue when all answers are correct. 
+- When all answers are correct, the component is locked and the user can no longer change the selected answers. 
+- The message below the components shows whether the answers are right or wrong.
+- The order of the answers is randomised every time the page is intially rendered.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Limitations
+- There is currently no sliding transition when changing answers.
+- Error when the number of options is less than 2 or more than 3.
+- The background colours between orange and blue are not always 'nice' colours.
+- Height of component does not change for longer answers.
+- Above 1350px, the size of the component does not change - for very large screens, the component may appear small.
